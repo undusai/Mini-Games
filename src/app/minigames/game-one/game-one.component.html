@@ -1,0 +1,40 @@
+<div id="snake-game" style="text-align:center; margin-top:20px;">
+  <h1>Snake Game 🐍</h1>
+
+  <ng-container *ngIf="isBrowser; else fallback">
+    <!-- Start Button (only before game starts) -->
+    <button
+      *ngIf="!gameStarted"
+      (click)="startGame()"
+      style="padding:10px 20px; font-size:16px; margin-bottom:10px;">
+      🎮 Start Game
+    </button>
+
+    <!-- Canvas (only when game started) -->
+    <canvas
+      *ngIf="gameStarted"
+      #screen
+      width="400"
+      height="400"
+      style="border:1px solid black; display:block; margin:auto;">
+    </canvas>
+
+    <!-- Score + Controls (only when game started) -->
+    <div *ngIf="gameStarted">
+      <h2>Score: {{ score }}</h2>
+      <div class="controls">
+        <button class="controls-btn" (click)="resetGame()">Restart</button>
+        <button class="controls-btn" (click)="pauseGame()">Pause</button>
+        <button class="controls-btn" (click)="stopGame()">Stop</button>
+        <button class="controls-btn" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- Fallback (SSR safe) -->
+  <ng-template #fallback>
+    <p style="color:gray; font-style:italic;">
+      Snake game available in browser only 🖥️
+    </p>
+  </ng-template>
+</div>

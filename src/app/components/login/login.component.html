@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+
+<div class="login-page">
+  <div class="login-box">
+    <h2>🎮 Gamer Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Username -->
+      <div class="input-group">
+        <label for="username">👤 Username</label>
+        <input id="username" type="text" formControlName="username" />
+        <div class="error" *ngIf="username?.invalid && username?.touched">
+          <small *ngIf="username?.errors?.['required']">⚠️ Username is required</small>
+          <small *ngIf="username?.errors?.['minlength']">⚠️ At least 4 chars</small>
+          <small *ngIf="username?.errors?.['maxlength']">⚠️ Max 16 chars</small>
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <label for="password">🔒 Password</label>
+        <input id="password" type="password" formControlName="password" />
+        <div class="error" *ngIf="password?.invalid && password?.touched">
+          <small *ngIf="password?.errors?.['required']">⚠️ Password required</small>
+          <small *ngIf="password?.errors?.['minlength']">⚠️ Min 8 chars</small>
+          <small *ngIf="password?.errors?.['pattern']">
+            ⚠️ Must include Uppercase + Number + Symbol
+          </small>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" [disabled]="loginForm.invalid">Enter Game 🚀</button>
+    </form>
+
+    <p class="hint">New here? <a href="/register">Register</a></p>
+  </div>
+</div>
+

@@ -1,0 +1,131 @@
+/* 🎮 Background with gaming theme */
+.login-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/loginPage-bgimg.jpg')
+    no-repeat center center/cover;
+  font-family: 'Orbitron', sans-serif; /* Futuristic gaming font */
+  position: relative;
+}
+
+/* Dark neon overlay */
+.login-page::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+
+/* Futuristic Login Box */
+.login-box {
+  position: relative;
+  z-index: 1;
+  width: 380px;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgba(20, 20, 30, 0.9);
+  border: 2px solid #00ffea;
+  box-shadow: 0 0 25px #00ffea, inset 0 0 20px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  color: #fff;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Title with glow */
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #00ffea;
+  text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #00e6ff;
+  text-shadow: 0 0 5px #00e6ff;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid #00e6ff;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: rgba(0,255,255,0.1);
+  box-shadow: 0 0 10px #00e6ff;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #ff0099, #493240);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background 0.4s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #00ffea, #007acc);
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* Error messages */
+.error small {
+  color: #ff8080;
+  font-size: 0.8rem;
+}
+
+/* Hint text */
+.hint {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.hint a {
+  color: #ff0099;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

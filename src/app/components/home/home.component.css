@@ -1,0 +1,63 @@
+.home-container {
+  height: 100vh;
+  background: url('/images/homePage-bgimg.jpg')
+    no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  text-align: center;
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-text {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  animation: glow 2s infinite alternate;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: linear-gradient(45deg, #007acc, #00bcd4);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4;
+  }
+  to {
+    text-shadow: 0 0 20px #007acc, 0 0 40px #007acc;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
